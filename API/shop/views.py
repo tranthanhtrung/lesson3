@@ -12,3 +12,23 @@ class CatergoriesSerializer(serializers.ModelSerializer):
 class CRUD_categories(viewsets.ModelViewSet):
 	queryset = models.categories.objects.all()
 	serializer_class = CatergoriesSerializer
+
+class ProductsSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.Products
+		fields = '__all__'
+		depth = 2
+
+class CRUD_products(viewsets.ModelViewSet):
+	queryset = models.Products.objects.all()
+	serializer_class = ProductsSerializer
+
+class OrdersSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.Products
+		fields = '__all__'
+		depth = 2
+
+class CRUD_orders(viewsets.ModelViewSet):
+	queryset = models.orders.objects.all()
+	serializer_class = OrdersSerializer
