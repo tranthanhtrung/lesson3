@@ -33,6 +33,7 @@ class CRUD_categories(viewsets.ModelViewSet):
 	serializer_class = CatergoriesSerializer
 
 class CRUD_products(viewsets.ModelViewSet):
+	#permission_classes = [IsAuthenticated]
 	queryset = models.Products.objects.all()
 	serializer_class = ProductsSerializer
 
