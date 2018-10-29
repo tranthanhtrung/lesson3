@@ -53,7 +53,7 @@ class orders(models.Model):
 		return str(self.custumer_id) + " " + str(self.total)
 		
 class Products(models.Model):
-	cat_id = models.ForeignKey(categories,on_delete=models.CASCADE)
+	cat_id = models.ForeignKey(categories, related_name = "products" ,on_delete=models.CASCADE)
 	name = models.CharField(max_length=20)
 	description = models.CharField(max_length=100)
 	image = models.CharField(max_length=200)
@@ -62,7 +62,7 @@ class Products(models.Model):
 		return self.name + " - " + str(self.price)
 
 class order_items(models.Model):
-	order_id = models.ForeignKey(orders, on_delete=models.CASCADE)
+	order_id = models.ForeignKey(orders, related_name = "items", on_delete=models.CASCADE)
 	product_id = models.ForeignKey(Products, on_delete=models.CASCADE)
 	quantity = models.IntegerField(default=0)
 	def __str__(self):

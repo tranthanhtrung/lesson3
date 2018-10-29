@@ -9,6 +9,7 @@ djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 django-cors = "*"
 django-cors-headers = "*"
+djangorestframework-jwt = "*"
 
 [dev-packages]
 
